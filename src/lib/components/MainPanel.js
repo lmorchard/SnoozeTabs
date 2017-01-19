@@ -21,7 +21,7 @@ export default class MainPanel extends React.Component {
 
     return (
       <div>
-        <div id={id} className={classnames('panel', { active })}>
+        <div id={id} className={classnames('static', 'panel', { active, obscured: datepickerActive })}>
           <ul className="times">
             { times.map(item => this.renderTime(item)) }
           </ul>
@@ -45,7 +45,7 @@ export default class MainPanel extends React.Component {
       <li className="option" key={item.id} id={item.id} onClick={ ev => this.handleOptionClick(ev, item) }>
         <img src={ `../icons/${item.icon || 'nightly.svg'}` } className="icon" />
         <div className="title">{item.title || '&nbsp;'}</div>
-        <div className="date">{date}</div>
+        <div className="date">&nbsp;{date}</div>
       </li>
     );
   }

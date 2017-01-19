@@ -37,7 +37,7 @@ export default class ManagePanel extends React.Component {
 
     return (
       <div>
-        <div id={id} className={classnames('panel', { active, 'static': !tabIsSnoozable })}>
+        <div id={id} className={classnames('panel', { active, obscured: datepickerActive, static: !tabIsSnoozable })}>
           <div className="header">Manage Snoozed Tabs</div>
           <ul className={classnames('entries', { 'big': !tabIsSnoozable })}>
             { sortedEntries.map((item, idx) => this.renderEntry(idx, item)) }

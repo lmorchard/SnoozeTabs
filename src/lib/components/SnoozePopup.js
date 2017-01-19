@@ -5,10 +5,10 @@ import ManagePanel from './ManagePanel';
 
 export default class SnoozePopup extends React.Component {
   render() {
-    const { activePanel } = this.props;
+    const { activePanel, tabIsSnoozable } = this.props;
     return (
-      <div>
-        <MainPanel {...this.props} id="main" active={'main' === activePanel} />
+      <div className="panel-wrapper">
+        {tabIsSnoozable && <MainPanel {...this.props} id="main" active={'main' === activePanel} />}
         <ManagePanel {...this.props} id="manage" active={'manage' === activePanel} />
       </div>
     );
