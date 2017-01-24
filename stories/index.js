@@ -33,9 +33,36 @@ const sampleEntries = [
   {'time':1481225942778,'title':'White Helmets in east Aleppo plead for help after regime advances | World news | The Guardian','url':'https://www.theguardian.com/world/2016/dec/08/white-helmets-in-east-aleppo-plead-for-help-as-regime-advances','windowId':0}
 ];
 
-storiesOf('SnoozePopup', module)
+storiesOf('SnoozePopup (on toolbar)', module)
   .addDecorator(host({
     width: 320, height: 476, border: '1px solid #ccc'
+  }))
+  .add('main', () => (
+    <SnoozePopup
+      {...commonProps}
+      {...{ activePanel: 'main', entries: [] }} />
+  ))
+  .add('manage', () => (
+    <SnoozePopup
+      {...commonProps}
+      {...{
+        activePanel: 'manage',
+        entries: sampleEntries
+      }} />
+  ))
+  .add('non-snoozable tab (manage static)', () => (
+    <SnoozePopup
+      {...commonProps}
+      {...{
+        tabIsSnoozable: false,
+        activePanel: 'manage',
+        entries: sampleEntries
+      }} />
+  ));
+
+storiesOf('SnoozePopup (in hamburger menu)', module)
+  .addDecorator(host({
+    width: 230, height: 555, border: '1px solid #ccc'
   }))
   .add('main', () => (
     <SnoozePopup

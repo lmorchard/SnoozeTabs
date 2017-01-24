@@ -4,6 +4,8 @@
 $panel-width: 320px;
 $panel-height: 474px;
 
+$narrow-panel-width: 230px;
+
 @font-face {
   font-family: 'Fira Sans';
   src: url('FiraSans-Regular.woff') format('woff');
@@ -21,8 +23,8 @@ body {
   color: #000000;
   background-color: #333333;
   letter-spacing: -.69px;
-  width: $panel-width;
-  height: $panel-height;
+  width: 100%;
+  height: 100%;
   cursor: default;
   overflow: hidden;
 }
@@ -525,4 +527,10 @@ li.entry {
     }
   }
 
+}
+
+.panel-wrapper.narrow {
+  .option {
+    font-size: 10px;
+  }
 }
